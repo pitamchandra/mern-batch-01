@@ -5,3 +5,9 @@ class Shape {
     }
 }
 
+class Circle extends Shape{
+    calculateArea(a)
+}
+class Rectangle extends Shape{
+
+}

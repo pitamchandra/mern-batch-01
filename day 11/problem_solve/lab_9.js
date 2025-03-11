@@ -18,7 +18,7 @@ class Calculator{
     add(a, b){
         console.log(a , b);
     }
-    add(a, b, c){
+    add(a, b, c=0){
         console.log(a + b + c);
     }
 }
@@ -26,3 +26,4 @@ class Calculator{
 let calculate = new Calculator()
 
 calculate.add(1 , 2)
+calculate.add(1 , 2, 9)
