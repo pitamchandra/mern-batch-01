@@ -1,4 +1,11 @@
 // Lab 8: Polymorphism (Method Overriding)
+// Instructions:
+// Create a class Animal with a method speak().
+// Create subclasses Dog and Cat that override the speak() method.
+// Create instances of Dog and Cat and call the speak() method.
+// Expected Output:
+// The dog barks
+// The cat meows
 
 class Animal {
     speak(){

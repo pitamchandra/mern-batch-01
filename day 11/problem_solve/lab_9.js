@@ -14,6 +14,15 @@
 // let calculate = new Calculator()
 // calculate.add(1,3,1, 1)
 
+// Lab 9: Polymorphism (Method Overloading)
+// Instructions:
+// Create a class Calculator with a method add() that can handle different numbers of arguments.
+// Call the add() method with 2 and 3 arguments.
+// // Expected Output:
+// 5
+// 9
+
+
 class Calculator{
     add(a, b){
         console.log(a , b);

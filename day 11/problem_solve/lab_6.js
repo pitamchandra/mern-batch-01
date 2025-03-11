@@ -1,4 +1,13 @@
 // Lab 6: Encapsulation
+// Instructions:
+// Create a class BankAccount with private properties: _balance and _accountNumber.
+// Use getters and setters to control access to these properties.
+// Add methods deposit() and withdraw() to modify the balance.
+// Create an instance of BankAccount, deposit and withdraw money, and log the balance.
+// Expected Output:
+
+// 1500
+// 1300
 
 class BankAccount {
     constructor(accountNumber, balance){
