@@ -21,6 +21,7 @@ class BankAccount {
         return this._balance;
     }
     set balance(amount){
+        console.log(amount);
         if(amount >= 0){
             this._balance = amount;
         }else{
@@ -41,7 +42,6 @@ class BankAccount {
         this._balance += amount
         console.log(`you have successfully deposit ${amount}. you current balance is ${this._balance}`);
     }
-
 }
 
 let user1 = new BankAccount(10, 100)
