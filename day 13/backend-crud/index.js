@@ -65,7 +65,7 @@ app.post('/users', (req, res) =>{
     }
     users.push(newUser)
     writeDataToFile(users)
-    res.json(users)
+    res.json({users})
     res.status(201)
 })
 
@@ -90,6 +90,20 @@ app.put('/users/:id', (req, res) =>{
         res.status(404).json({error: "User not found"})
     }
 
+})
+
+app.patch('/users/:id', (req, res) =>{
+    const {id} = req.params
+    const users = readDataFromFile()
+    const updateUser = req.body
+    const userIndex = users.findIndex(user => user.id === parseInt(id)) 
+    if(userIndex !== -1){
+        users[userIndex] = {...users[userIndex], ...updateUser}
+        res.json({type: "update a user", updatedUser: users[userIndex]})
+        writeDataToFile(users)
+    }else{
+        res.status(404).json({error: "user not found"})
+    }
 })
 
 app.delete('/users/:id', (req, res) =>{
