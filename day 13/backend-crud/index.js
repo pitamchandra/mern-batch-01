@@ -65,7 +65,7 @@ app.post('/users', (req, res) =>{
     }
     users.push(newUser)
     writeDataToFile(users)
-    res.json({users})
+    res.json({type: "post", status: "success", newUser: newUser})
     res.status(201)
 })
 
@@ -114,7 +114,7 @@ app.delete('/users/:id', (req, res) =>{
     if(userIndex !== -1){
         users.splice(userIndex, 1)
         writeDataToFile(users)
-        res.json(users)
+        res.json({type: "delete", status: 'success', users: users})
         res.status(201).json("User is deleted successfuly")
     }else{
         res.status(404).json({error: "user is not found"})
