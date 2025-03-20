@@ -1,0 +1,30 @@
+### get all users
+
+
+
+###get a user
+
+GET http://localhost:5000/users/2
+
+### Post data to database
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name" : "pitam",
+    "email" : "pitam@gmail.com",
+    "number": "012457"
+}
+
+### update a data
+PUT http://localhost:5000/users/3
+Content-Type: application/json
+
+{
+    "name" : "rasel",
+    "email" : "rasel@gmail.com",
+    "number" : "0124785"
+}
+
+### delete a data
+DELETE http://localhost:5000/users/4
