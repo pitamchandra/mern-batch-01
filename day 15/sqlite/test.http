@@ -1,0 +1,30 @@
+### post data
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "lala y12",
+    "price": "1400",
+    "category": "mobile",
+    "tag": "smart"
+}
+
+### get all data
+GET  http://localhost:3000/products
+
+### get specifiq data
+GET http://localhost:3000/products/3
+
+### update data
+PUT http://localhost:3000/products/2
+Content-Type: application/json
+
+{
+    "name": "iphone",
+    "price": "150000",
+    "category": "mobile",
+    "tag": "smart"
+}
+
+### delete data
+DELETE http://localhost:3000/products/5

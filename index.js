@@ -5,13 +5,9 @@
 //     .catch(error => console.error("❌ Error:", error));
 
 
-    const users = {
-        name: "pitam",
-        email: "email"
-    }
-    const udpateUser = {
-        name: "imran",
-        email: "imran@gmail.com",
-        phone: "012457"
-    }
-    console.log({...users, ...udpateUser});
+let lala;
+if([]){
+    console.log("true");
+}else{
+    console.log("false");
+}
