@@ -7,7 +7,7 @@ const port = 3000;
 
 // middleware
 app.use(cors());
-app.use(express());
+app.use(express.json());
 
 // connecting sqlite database
 const db = new sqlite3.Database('school_management.db', (err) => {
@@ -35,7 +35,7 @@ app.get('/', (req, res) =>{
 app.post('/students', (req, res) => {
     const {name, age, department_id} = req.body;
     db.run(
-        `insert into students(name, price, department_id) values (?, ?, ?)`,
+        `insert into students(name, age, department_id) values (?, ?, ?)`,
         [name, age, department_id],
         function (err) {
             if(err){
@@ -45,6 +45,34 @@ app.post('/students', (req, res) => {
             }
         }
     )
+})
+
+app.get('/students', (req, res) => {
+    db.all('select * from students', [], (err, rows) =>{
+        if(err){
+            res.status(500).json({error : err.message})
+        } else{
+            res.send(rows)
+        }
+    })
+})
+
+// get a specific data
+
+app.get("/students/:id", (req, res) => {
+    db.get('select * from students where id = ?', [req.params.id], (err, row)=>{
+        if(err){
+            res.send({
+                status: "error",
+                message: "product not found"
+            })
+        }else{
+            res.send({
+                status: "success",
+                data: row
+            })
+        }
+    })
 })
 
 

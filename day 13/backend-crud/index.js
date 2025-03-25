@@ -23,7 +23,7 @@ const writeDataToFile = (data) =>{
 
 // writeDataToFile({hello: "lala"})
 
-const readDataFromFile = (data) =>{
+const readDataFromFile = () =>{
     try{
         const data = fs.readFileSync(dbFilePath)
         return JSON.parse(data)
@@ -115,7 +115,7 @@ app.delete('/users/:id', (req, res) =>{
         users.splice(userIndex, 1)
         writeDataToFile(users)
         res.json({type: "delete", status: 'success', users: users})
-        res.status(201).json("User is deleted successfuly")
+        res.status(201).json("User is deleted successfully")
     }else{
         res.status(404).json({error: "user is not found"})
     }

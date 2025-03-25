@@ -1,5 +1,5 @@
 ### get all users
-
+GET http://localhost:5000/users/
 
 
 ###get a user
@@ -11,8 +11,8 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name" : "pitam",
-    "email" : "pitam@gmail.com",
+    "name" : "lala",
+    "email" : "lala@gmail.com",
     "number": "012457"
 }
 
@@ -27,11 +27,12 @@ Content-Type: application/json
 }
 
 ### udate a single data
-PATCH http://localhost:5000/users/1
+PATCH http://localhost:5000/users/5
 Content-Type: application/json
 
 {
-    "phone": "01751751180"
+    "name": "soikot",
+    "email": "soikot@gmail.com"
 }
 
 ### delete a data

@@ -1,0 +1,15 @@
+### get all data
+GET http://localhost:3000/students
+
+### post data
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "name": "lala",
+    "age": 52,
+    "department_id": 1
+}
+
+### get one data
+GET http://localhost:3000/students/2
