@@ -2,7 +2,10 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "Black Hoodie",
-    "price":"580",
+    "name": "top nice t-shirt",
+    "price":"1200",
     "description": "modern t shirt"
 }
+
+### get product
+GET http://localhost:3000/products

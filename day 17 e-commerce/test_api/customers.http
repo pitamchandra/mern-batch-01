@@ -1,0 +1,10 @@
+### create customers
+POST http://localhost:3000/customers
+Content-Type: application/json
+
+{
+    "name": "pitam",
+    "email": "pitam@gmail.com",
+    "phone": "01457284",
+    "address": "rampura"
+}

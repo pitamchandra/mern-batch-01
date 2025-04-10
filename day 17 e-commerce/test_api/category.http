@@ -3,7 +3,7 @@ POST http://localhost:3000/categories
 Content-Type: application/json
 
 {
-    "name": "womens",
+    "name": "lala",
     "description": "this is the mens products"
 }
 
@@ -14,13 +14,13 @@ GET http://localhost:3000/categories
 GET http://localhost:3000/categories/2
 
 ### update a categories
-PUT http://localhost:3000/categories/2
+PUT http://localhost:3000/categories/3
 Content-Type: application/json
 
 {
-    "name": "women",
-    "description" : "lallalala"
+    "name": "electronic",
+    "description" : "this is electornic category"
 }
 
 ### delete categories
-DELETE http://localhost:3000/categories/4
+DELETE http://localhost:3000/categories/7
