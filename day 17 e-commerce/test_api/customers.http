@@ -3,8 +3,38 @@ POST http://localhost:3000/customers
 Content-Type: application/json
 
 {
-    "name": "pitam",
-    "email": "pitam@gmail.com",
-    "phone": "01457284",
-    "address": "rampura"
+    "name": "junayed",
+    "email": "lala@gmail.com",
+    "phone": "12570125",
+    "address": "gajipur"
 }
+
+### get all customers
+GET http://localhost:3000/customers
+
+### get customer by id
+GET http://localhost:3000/customers/3
+
+### update customers data
+PUT  http://localhost:3000/customers/3
+Content-Type: application/json
+
+{
+    "name": "imran",
+    "email": "imran@gmail.com",
+    "phone": "01785456",
+    "address": "uttar badda"
+}
+
+### update just some customers data
+PATCH http://localhost:3000/customers/3
+Content-Type: application/json
+
+{
+    "name": "lala"
+}
+
+
+### delete ustomers data
+DELETE http://localhost:3000/customers/6
+
