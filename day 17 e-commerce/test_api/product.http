@@ -2,10 +2,32 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "top nice t-shirt",
+    "name": "lala",
     "price":"1200",
     "description": "modern t shirt"
 }
 
 ### get product
 GET http://localhost:3000/products
+
+### get product by id
+GET http://localhost:3000/products/5
+
+
+### update product by id
+PUT http://localhost:3000/products/5
+Content-Type: application/json
+
+{
+    "name": "top nice t-shirt",
+    "price":"1200",
+    "description": "modern t shirt"
+}
+
+### update product by id
+PATCH http://localhost:3000/products/5
+Content-Type: application/json
+
+{
+    "price":"700"
+}

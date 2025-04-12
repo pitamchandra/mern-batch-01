@@ -1,5 +1,8 @@
+### lalal
+@base_url = http://103.145.138.112:3000
+
 ### create customers
-POST http://localhost:3000/customers
+POST {{base_url}}/customers
 Content-Type: application/json
 
 {
@@ -10,13 +13,13 @@ Content-Type: application/json
 }
 
 ### get all customers
-GET http://localhost:3000/customers
+GET {{base_url}}/customers
 
 ### get customer by id
-GET http://localhost:3000/customers/3
+GET {{base_url}}/customers/3
 
 ### update customers data
-PUT  http://localhost:3000/customers/3
+PUT  {{base_url}}/customers/3
 Content-Type: application/json
 
 {
@@ -27,7 +30,7 @@ Content-Type: application/json
 }
 
 ### update just some customers data
-PATCH http://localhost:3000/customers/3
+PATCH {{base_url}}/customers/3
 Content-Type: application/json
 
 {
@@ -36,5 +39,5 @@ Content-Type: application/json
 
 
 ### delete ustomers data
-DELETE http://localhost:3000/customers/6
+DELETE {{base_url}}/customers/6
 
