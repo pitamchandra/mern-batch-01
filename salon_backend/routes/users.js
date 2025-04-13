@@ -1,16 +1,35 @@
 const express = require('express')
 const db = require('../db')
+const multer = require('multer')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
+const path = require('path');
+
+// multer setup
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null, 'uploads/')
+    },
+    filename: (req, file, cb) => {
+        const ext = path.extname(file.originalname)
+        cb(null, Date.now() + ext)
+    }
+})
+
+const upload = multer({storage})
+console.log(upload);
 
 
 // create new user
-router.post('/', async (req, res) => {
+router.post('/', upload.fields([{name: "profile_image", maxCount: 1}, {name: "cover_image", maxCount: 1}]), async (req, res) => {
     const { name, email, phone, password, profile_image, cover_image, role } = req.body;
+    const profileImage = req.files.profile_image?.[0]?.filename || null;
+    const coverImage = req.files.cover_image?.[0]?.filename || null;
     try{
         const hashedPassword = await bcrypt.hash(password, 10)
         const sql = 'INSERT INTO users (name, email, phone, password, profile_image, cover_image, role) VALUES (?,?,?,?,?,?,?)'
-        db.query(sql,[name, email, phone, hashedPassword, profile_image, cover_image, role],(err, result) => {
+        db.query(sql,[name, email, phone, hashedPassword, profileImage, coverImage, role],(err, result) => {
             if(err){
                 res.status(500).json({
                     status: "error",
@@ -21,7 +40,7 @@ router.post('/', async (req, res) => {
                 res.status(201).json({
                     status: "success",
                     message: "user created successfully",
-                    data: {id: result.insertId, name, email, phone, profile_image, cover_image, role}
+                    data: {id: result.insertId, name, email, phone, profile_image:profileImage, cover_image:coverImage, role}
                 })
             }
         })

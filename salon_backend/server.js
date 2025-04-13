@@ -6,9 +6,11 @@ const db = require('./db')
 
 const app = express()
 
+
 // middleware
 app.use(express.json())
 app.use(cors())
+app.use('/uploads', express.static('uploads'));
 
 const port = process.env.SERVER_PORT || 3000
 const host = process.env.SERVER_IP || '127.0.0.1'
