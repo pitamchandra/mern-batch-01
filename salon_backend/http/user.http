@@ -1,0 +1,47 @@
+### common path
+
+@base_url = http://103.145.138.112:3000
+
+### post a user
+POST {{base_url}}/users
+Content-Type: application/json
+
+{
+    "name": "pitam",
+    "email": "pitam@example.com",
+    "phone": "1234567890",
+    "password": "lala",
+    "profile_image": "https://i.ibb.co.com/cXwTMtXj/5677.jpg",
+    "cover_image": "https://i.ibb.co.com/FbKZWf57/143231.jpg"
+}
+
+### get all users
+GET {{base_url}}/users
+
+### get users by id
+GET {{base_url}}/users/1
+
+### put users by id
+PUT {{base_url}}/users/1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "phone": "1234567890",
+    "password": "mypassword",
+    "profile_image": "https://i.ibb.co.com/cXwTMtXj/5677.jpg",
+    "cover_image": "https://i.ibb.co.com/FbKZWf57/143231.jpg"
+}
+
+### patch users by id
+PATCH {{base_url}}/users/1
+Content-Type: application/json
+
+{
+    "phone": "01777777",
+    "password": "lalal"
+}
+
+### patch users by id
+DELETE {{base_url}}/users/7
