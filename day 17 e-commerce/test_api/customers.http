@@ -6,10 +6,10 @@ POST {{base_url}}/customers
 Content-Type: application/json
 
 {
-    "name": "junayed",
-    "email": "lala@gmail.com",
-    "phone": "12570125",
-    "address": "gajipur"
+    "name": "soikot",
+    "email": "soikot@gmail.com",
+    "phone": "01780659420",
+    "address": "hatirjil"
 }
 
 ### get all customers
@@ -34,7 +34,7 @@ PATCH {{base_url}}/customers/3
 Content-Type: application/json
 
 {
-    "name": "lala"
+    "address": "jattrabari"
 }
 
 

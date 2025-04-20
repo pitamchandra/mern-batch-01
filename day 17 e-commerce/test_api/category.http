@@ -6,8 +6,8 @@ POST {{base_url}}/categories
 Content-Type: application/json
 
 {
-    "name": "lala",
-    "description": "this is the mens products"
+    "name": "electronic",
+    "description": "this is the electronic products"
 }
 
 ### get all categories

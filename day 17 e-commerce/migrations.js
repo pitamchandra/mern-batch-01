@@ -20,10 +20,8 @@ const createTables = () =>{
             id INT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             price DECIMAL(10, 2) NOT NULL,
-            description TEXT,
-            category_id INT,
-            FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
-        )`, 
+            description TEXT
+        )`,
         (err) => {
             if(err){
                 console.error('error creating table products', err.message)
@@ -32,6 +30,25 @@ const createTables = () =>{
             }
         }
     );
+
+    db.query(
+        `CREATE TABLE IF NOT EXISTS product_categories(
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            product_id INT NOT NULL,
+            category_id INT NOT NULL,
+            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
+            FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
+            UNIQUE KEY (product_id, category_id)
+        )`, 
+        (err) => {
+            if(err){
+                console.error('error creating table cart', err.message)
+            }else{
+                console.log('Cart table is ready');
+            }
+        }
+    );
+
     db.query(
         `CREATE TABLE IF NOT EXISTS customers(
             id INT PRIMARY KEY AUTO_INCREMENT,
@@ -71,8 +88,8 @@ const createTables = () =>{
             quantity INT NOT NULL CHECK (quantity > 0),
             price DECIMAL(10, 2) NOT NULL,
             FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
-            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-            
+            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
+            UNIQUE KEY (order_id, product_id)
         )`, (err) => {
             if(err){
                 console.error('error creating table order items ', err.message)

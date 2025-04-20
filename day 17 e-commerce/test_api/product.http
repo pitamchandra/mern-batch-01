@@ -1,21 +1,25 @@
-POST http://localhost:3000/products
+### base url
+@base_url = http://103.145.138.112:3000
+
+### create products
+POST {{base_url}}/products
 Content-Type: application/json
 
 {
-    "name": "lala",
-    "price":"1200",
-    "description": "modern t shirt"
+    "name": "men t-shirt",
+    "price":"3000",
+    "description": "modern three pics"
 }
 
 ### get product
-GET http://localhost:3000/products
+GET {{base_url}}/products
 
 ### get product by id
-GET http://localhost:3000/products/5
+GET {{base_url}}/products/3
 
 
 ### update product by id
-PUT http://localhost:3000/products/5
+PUT {{base_url}}/products/5
 Content-Type: application/json
 
 {
@@ -25,9 +29,9 @@ Content-Type: application/json
 }
 
 ### update product by id
-PATCH http://localhost:3000/products/5
+PATCH {{base_url}}/products/3
 Content-Type: application/json
 
 {
-    "price":"700"
+    "description":"modern t-shirt"
 }
